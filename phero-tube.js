@@ -27,14 +27,17 @@ const handleCardCategories = async (itemsId) => {
     // clear cards
     getCardContainer.textContent = '';
     // No data/card available
+    const noCardContainer = document.getElementById('no-card-container')
+    noCardContainer.textContent = ''
     if (data.data.length <= 0) {
-        const noCardContainer = document.getElementById('no-card-container')
-        noCardContainer.textContent = ''
         const noCardCreateDiv = document.createElement('div');
         noCardCreateDiv.innerHTML = `<img class="ml-[45%]" src="./Icon.png" alt="">
         <p class="text-4xl font-bold text-black mt-4 text-center">Oops!! Sorry, There is no <br> Content here</p>
         `
+        noCardContainer.classList.remove("hidden");
         noCardContainer.appendChild(noCardCreateDiv);
+    }else{
+        noCardContainer.classList.add('hidden')
     }
 
     data.data.forEach((item) => {
