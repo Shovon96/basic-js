@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHero Tube</title>
+    <!-- DaisyUI and tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar menu -->
+        <nav class="container mx-auto">
+            <!-- desktop site -->
+            <div class="flex flex-col md:flex-row justify-between px-12 py-4 mt-4">
+                <img src="./Logo.png" alt="">
+                <button id="sort-by-view-btn" class="btn bg-gray-300 rounded-lg my-4 md:my-0">Sort by view</button>
+                <button id="btn-blog" class="btn bg-red-600 text-white font-semibold rounded-lg hover:text-black">Blog</button>
+            </div>
+            <hr>
+        </nav>
+    </header>
+
+    <main class="container mx-auto">
+        <section>
+            <!-- categories button container -->
+            <div id="categories-container" class="flex justify-center mt-5 gap-2 md:gap-4">
+
+            </div>
+        </section>
+
+        <!-- Card section -->
+        <section>
+            <div id="card-container" class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                        <img class="p-4 rounded-lg" src="https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png" alt="">
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-5">
+                            <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                alt="">
+                            <h2 class="card-title font-bold">
+                                Biden Pledges Nearly $3 Billion To Ukraine
+                            </h2>
+                        </div>
+                        <div class="ml-20 text-slate-500">
+                            <p class="my-2">Awlad hossin</p>
+                            <p>19k views</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- No card available -->
+            <div id="no-card-container" class="mt-20" >
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- Js file link -->
+    <script src="./phero-tube.js"></script>
+</body>
+
+</html>

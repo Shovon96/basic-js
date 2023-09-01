@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <!-- DaisyUI and tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="container w-3/4 my-8  mx-auto">
+        <div class="collapse collapse-arrow bg-base-200 my-10">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-2xl font-medium">
+                Discuss the scope of var, let, and const
+            </div>
+            <div class="collapse-content">
+                <p><span class="font-bold">Global scope:</span> Variables declared outside of any function have global
+                    scope. They can be accessed from anywhere in the code. <br>
+                    <span class="font-bold">Function scope:</span> Variables declared inside a function have function
+                    scope. They can only be accessed from within the function that they are declared in. <br>
+                    <span class="font-bold">Block scope:</span> Variables declared in a block (such as a if statement or
+                    a for loop) have block scope. They can only be accessed from within the block that they are declared
+                    in.
+                    The keywords var, let, and const are used to declare variables in JavaScript. The scope of a
+                    variable declared with each keyword is different. <br>
+
+                    <span class="font-bold">var:</span> Variables declared with the var keyword have function scope.
+                    This is the default scope in JavaScript. <br>
+                    <span class="font-bold">let:</span> Variables declared with the let keyword have block scope. <br>
+                    <span class="font-bold">const:</span> Variables declared with the const keyword also have block
+                    scope, but they cannot be reassigned once they are initialized.
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">
+                Tell us the use cases of null and undefined
+            </div>
+            <div class="collapse-content">
+                <p><span class="font-bold">Null</span> is used to explicitly represent the absence of a value. For
+                    example, you might use null to
+                    represent a user that has not logged in, or a product that is not in stock. <br>
+                    <span class="font-bold">Undefined</span> is used to represent the absence of a value that has not
+                    been explicitly assigned. For
+                    example, the value of a variable that has not been initialized is undefined.
+                    Here are some of the use cases of null and undefined <br><br>
+
+                    *You can use the === operator to compare a value to null or undefined.
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 my-10">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">
+                What do you mean by REST API?
+            </div>
+            <div class="collapse-content">
+                <p><span class="font-bold">REST API</span> stands for Representational State Transfer Application
+                    Programming Interface. It is an architectural style for designing APIs (Application Programming
+                    Interfaces) that allows for interaction between systems. REST APIs are based on the HTTP protocol
+                    and use standard HTTP verbs (GET, POST, PUT, DELETE) to perform operations on resources.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
