@@ -51,7 +51,7 @@ const handleCardCategories = async (itemsId) => {
         // Create a div and this div innerHTML and appended
         const createDiv = document.createElement('div');
         createDiv.innerHTML = `
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-base-100 shadow-xl item">
                 <figure>
                     <img class="p-4 rounded-lg h-60 w-80 relative" src="${item?.thumbnail}" alt="">
                     <p class="bg-black text-white text-sm ml-32 mt-44 px-2 rounded-lg absolute">${item.others?.posted_date ? `${hours} hrs ${minutes} min ago` : ''}</p>
@@ -65,7 +65,7 @@ const handleCardCategories = async (itemsId) => {
                         <p class="flex gap-2 my-2">${item?.authors[0]?.profile_name}
                         <span>${item?.authors[0]?.verified ? '<img src="./verified_icon.svg" alt="">' : ''}</span>
                         </p>
-                        <p>${item.others.views} views</p>
+                        <p class="views">${item.others.views} views</p>
                     </div>
                 </div>
             </div>
@@ -80,24 +80,31 @@ const getBlogBtn = document.getElementById('btn-blog').addEventListener('click',
     window.location.href = "blog.html"
 })
 
+// Sort by views function
+function sortByViewCard() {
+  const cardContainer = document.getElementById("card-container");
+  const cardItems = Array.from(cardContainer.querySelectorAll("div.item"));
+  cardItems.sort((a, b) => {
+    const viewsCardA = parseInt(
+      a.querySelector(".views").textContent.replace(/[^\d]/g, "")
+    );
+    const viewsCardB = parseInt(
+      b.querySelector(".views").textContent.replace(/[^\d]/g, "")
+    );
+    return viewsCardB - viewsCardA;
+  });
+  const sortByViewBtn = document.getElementById("sort-by-view-btn");
+  sortByViewBtn.addEventListener("click", () => {
+    sortByViewCard();
+  });
+
+  cardContainer.innerHTML = "";
+  cardItems.forEach((cardItem) => {
+    cardContainer.appendChild(cardItem);
+  });
+}
 
 
 handleCategories()
 handleCardCategories('1000')
-
-
-/*  sort by views
-let rccddata = data.data
-const sortByViewBtn = document.getElementById("sort-by-view-btn");
-sortByViewBtn.addEventListener("click", () => {
-    console.log(rccddata)
-    rccddata = sortArrayByViewsDescending(rccddata);
-});
-
-function sortArrayByViewsDescending(array) {
-    return array.sort((a, b) => {
-        const viewsA = parseInt(a.others.views.replace(/[^\d]/g, ""));
-        const viewsB = parseInt(b.others.views.replace(/[^\d]/g, ""));
-        return viewsB - viewsA;
-    });
-} */
+sortByViewCard()
